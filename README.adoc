@@ -1,0 +1,51 @@
+= Gitlab Test
+
+:icons: font
+
+A simple example of how to create a repository in gitlab with the master and develop branch, reactive programming is used with spring webflux, spring cloud contract both to generate the stubs and to consume them as well.
+
+You must first create the repository and with the id returned from gitlab you invoke another endpoint to create the develop branch, i.e. both invocations to these services are merged with WebClient.
+
+== The Image 1
+
+To create the image-1 at the moment the `Dockerfile` is executed from the `image-1` folder, possibly with docker-compose the creation would be easier.
+
+[source,sh]
+----
+docker build -t image-1 .
+----
+
+[source,sh]
+----
+docker run -ti -p 9090:8080 image-1
+----
+
+- http://localhost:9090/webjars/swagger-ui/index.html#
+
+The openapi code gen generator is used to create the swagger and the endpoint.
+
+image:/image-1/images/swagger-image1.png[width="100%"]
+
+
+=== Ejecutar el post
+
+[source,json]
+----
+{
+  "name": "test",
+  "description": "Example of project creation using gitlab api with java.",
+  "path": "basic_project",
+  "initialize_with_readme": "true",
+  "topics": [
+    "0.0.1"
+  ],
+  "visibility": "public",
+  "default_branch": "master"
+}
+----
+
+The generated id is shown here
+
+image:/image-1/images/repository-successfully-created.png[width="100%"]
+
+image:/image-1/images/new-gitlab-repo.png[width="100%"]
