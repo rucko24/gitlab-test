@@ -36,7 +36,7 @@ public class GitlabWebClientRepositoryBuilderConfiguration {
         return webClient
                 .clientConnector(new ReactorClientHttpConnector(httpClient))
                 .baseUrl(baseUrl)
-                .defaultHeader(HttpHeaders.AUTHORIZATION,"TOP_SECRET")
+                .defaultHeader(HttpHeaders.AUTHORIZATION,"")
                 .build();
     }
 }
