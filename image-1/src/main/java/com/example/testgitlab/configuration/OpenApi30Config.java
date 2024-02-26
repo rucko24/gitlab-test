@@ -12,7 +12,8 @@ import org.springframework.context.annotation.Configuration;
         title = "Gitlab repository example",
         version = "1.0",
         description = "Gitlab repository builder example documents"
-), servers = @Server(url = "http://localhost:8080", description = "localhost"))
+), servers = {@Server(url = "http://localhost:8080", description = "localhost"),
+                @Server(url = "http://localhost:9090", description = "docker")})
 @SecurityScheme(
         name = "bearerAuth",
         type = SecuritySchemeType.HTTP,
