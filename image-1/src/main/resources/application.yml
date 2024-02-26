@@ -1,0 +1,20 @@
+#spring:
+#  profiles:
+#    active: local
+server:
+  port: ${PORT:8080}
+  springdoc:
+    api-docs:
+      path: /documentation/v3/api-docs
+    swagger-ui:
+      user-root:
+        path: true
+    openApi:
+      v3:
+        path: /documentation/v3/api-docs
+#spring:
+#  webflux:
+#    base-path: /api/v1
+# Gitlab base url
+gitlab-base-url:
+  project: "https://gitlab.com/api/v4/projects"

@@ -1,0 +1,116 @@
+openapi: "3.0.2"
+info:
+  title: Gitlab repository builder Example
+  version: "1.0"
+  description: Gitlab repository builder is capable of creating two branches, both master and develop
+servers:
+  - url: http://localhost:8080/
+    description: Local Server
+tags:
+  - name: gitlab
+    description: Gitlab repository builder is capable of creating two branches, both master and develop
+paths:
+  /api/v1/gitlab-repository:
+    $ref: "./api_v1_gitlab_repository_path.yml"
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  responses:
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - code
+              - title
+              - detail
+            properties:
+              code:
+                description: "A number that represents a type of errors, grouping those of similar characteristics"
+                type: integer
+                format: int32
+                example: 404
+              title:
+                description: "resource-not-found"
+                type: string
+                maxLength: 2000
+                example: Not found
+              detail:
+                description: "A human friendly description of the error in english"
+                type: string
+                maxLength: 400
+                example: "The resource can't be found"
+              additionalData:
+                $ref: '#/components/schemas/AdditionalData'
+    BadRequest:
+      description: Request contains incorrect syntax or cannot be processed
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - code
+              - title
+              - detail
+            properties:
+              code:
+                description: "A number that represents a type of errors, grouping those of similar characteristics"
+                type: integer
+                format: int32
+                example: 400
+              title:
+                description: "A machine friendly identifier for the code"
+                type: string
+                maxLength: 2000
+                example: Bad request
+              detail:
+                description: "A human friendly description of the error in english"
+                type: string
+                maxLength: 4000000
+                example: Error when creating a project in gitlab, possibly exists
+              additionalData:
+                $ref: '#/components/schemas/AdditionalData'
+    ServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - code
+              - title
+              - detail
+            properties:
+              code:
+                description: "A number that represents a type of errors, grouping those of similar characteristics"
+                type: integer
+                format: int32
+                example: 500
+              title:
+                description: "A machine friendly identifier for the code"
+                type: string
+                maxLength: 2000
+                example: Internal server error
+              detail:
+                description: "A human friendly description of the error in english"
+                type: string
+                maxLength: 4000000
+                example: Internal server error
+              additionalData:
+                $ref: '#/components/schemas/AdditionalData'
+            additionalProperties: false
+  schemas:
+    AdditionalData:
+      type: object
+      description: "More data available to understand or track the error"
+      properties:
+        timestamp:
+          maxLength: 40000
+          example: 2019-04-22T09:54:18.471Z
+      additionalProperties: false

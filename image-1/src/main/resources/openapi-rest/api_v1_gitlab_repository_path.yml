@@ -1,0 +1,25 @@
+post:
+  operationId: createGitlabRepository
+  summary: Endpoint to create a new repository using GitLab API.
+  tags:
+    - gitlab
+  description: :D
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: './api_v1_gitlab_repository_components.yml#/components/schemas/GitlabRepositoryRequest'
+  responses:
+    '200':
+      description: Repository created successfully
+      content:
+        application/json:
+          schema:
+            $ref: './api_v1_gitlab_repository_components.yml#/components/schemas/GitlabRepositoryResponse'
+    '400':
+      $ref: './openapi-rest.yml#/components/responses/BadRequest'
+    '404':
+      $ref: './openapi-rest.yml#/components/responses/NotFound'
+    '500':
+      $ref: './openapi-rest.yml#/components/responses/ServerError'
