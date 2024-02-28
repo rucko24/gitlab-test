@@ -19,7 +19,8 @@ public class CreateGitlabRepositoryController implements GitlabApi {
 
     @Override
     public Mono<GitlabRepositoryResponse> createGitlabRepository(Mono<GitlabRepositoryRequest> gitlabRespositoryRequest, ServerWebExchange exchange) {
-        return gitlabService.createRepositoryWithDevelopBranch(gitlabRespositoryRequest);
+        return gitlabService.createRepositoryWithDevelopBranchAndTagName(gitlabRespositoryRequest);
     }
+
 
 }

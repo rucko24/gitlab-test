@@ -15,16 +15,16 @@ import java.net.URI;
 import java.util.function.Function;
 
 /**
- * Service to create in the existing repository a branch develop
+ * Service to create in the existing repository a tag 0.0.1
  */
 @Service
 @RequiredArgsConstructor
 @Log4j2
-public class GitlabCreateBranchServiceWebClient {
+public class GitlabCreateTagServiceWebClient {
 
     private final WebClient gitlabWebClientRepositoryBuilder;
 
-    public Mono<GitlabRepositoryResponse> createDevelopBranchInGitlab(final String repositoryId) {
+    public Mono<GitlabRepositoryResponse> createTagInGitlab(final String repositoryId) {
         return gitlabWebClientRepositoryBuilder.post()
                 .uri(this.createUriBuilder(repositoryId))
                 .contentType(MediaType.APPLICATION_JSON)
@@ -40,12 +40,12 @@ public class GitlabCreateBranchServiceWebClient {
                     response.setId(repositoryId);
                     return response;
                 })
-                .doOnNext(onNext -> log.info("Branch successfully created [id: {}]", repositoryId));
+                .doOnNext(onNext -> log.info("Tag successfully created [id: {}]", repositoryId));
     }
 
     private Function<UriBuilder, URI> createUriBuilder(final String id) {
-        return uriBuilder -> uriBuilder.path("/"+ id + "/repository/branches")
-                .queryParam("branch","develop")
+        return uriBuilder -> uriBuilder.path("/"+ id + "/repository/tags")
+                .queryParam("tag_name","0.0.1")
                 .queryParam("ref","master")
                 .build();
     }

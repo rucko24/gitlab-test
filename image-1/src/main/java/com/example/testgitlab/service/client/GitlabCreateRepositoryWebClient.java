@@ -20,10 +20,10 @@ import reactor.core.publisher.Mono;
 @Log4j2
 public class GitlabCreateRepositoryWebClient {
 
-    private final WebClient webClient;
+    private final WebClient gitlabWebClientRepositoryBuilder;
 
     public Mono<GitlabRepositoryResponse> createRepositoryInGitlab(Mono<GitlabRepositoryRequest> gitlabRequestBody) {
-        return webClient.post()
+        return gitlabWebClientRepositoryBuilder.post()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(gitlabRequestBody, GitlabRepositoryRequest.class)
                 .accept(MediaType.APPLICATION_JSON)

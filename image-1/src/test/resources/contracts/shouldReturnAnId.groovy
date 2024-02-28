@@ -17,7 +17,6 @@ Contract.make {
                 "description": "Example of project creation using gitlab api with java.",
                 "path": "basic_project-5",
                 "initialize_with_readme": "true",
-                "topics": ["0.0.1"],
                 "visibility": "public",
                 "default_branch": "master"
                 """

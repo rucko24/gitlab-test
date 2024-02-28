@@ -12,13 +12,10 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.ActiveProfiles;
 import reactor.core.publisher.Mono;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 @SpringBootTest
 //@ActiveProfiles("local")
@@ -51,7 +48,7 @@ class GitlabBuildBaseTestClass {
         GitlabRepositoryResponse gitlabRepositoryResponse = new GitlabRepositoryResponse();
         gitlabRepositoryResponse.setId("55196040");
 
-        Mockito.when(this.gitlabService.createRepositoryWithDevelopBranch(Mono.just(repositoryRequest)))
+        Mockito.when(this.gitlabService.createRepositoryWithDevelopBranchAndTagName(Mono.just(repositoryRequest)))
                 .thenReturn(Mono.just(gitlabRepositoryResponse));
 
     }

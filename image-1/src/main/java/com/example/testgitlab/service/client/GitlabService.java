@@ -16,14 +16,22 @@ public class GitlabService {
 
     private final GitlabCreateBranchServiceWebClient gitlabCreateBranchServiceWebClient;
 
-    public Mono<GitlabRepositoryResponse> createRepositoryWithDevelopBranch(Mono<GitlabRepositoryRequest> gitlabRespositoryRequest) {
+    private final GitlabCreateTagServiceWebClient gitlabCreateTagServiceWebClient;
+
+    public Mono<GitlabRepositoryResponse> createRepositoryWithDevelopBranchAndTagName(Mono<GitlabRepositoryRequest> gitlabRespositoryRequest) {
         return gitlabCreateRepositoryWebClient.createRepositoryInGitlab(gitlabRespositoryRequest)
-                .flatMap(this::handleMergeWithAnotherCall);
+                .flatMap(this::createDeveloperBranch)
+                .flatMap(this::createTagName);
     }
 
-    private Mono<GitlabRepositoryResponse> handleMergeWithAnotherCall(GitlabRepositoryResponse gitlabRespositoryResponse) {
+    private Mono<GitlabRepositoryResponse> createDeveloperBranch(GitlabRepositoryResponse gitlabRespositoryResponse) {
         final var repositoryId = gitlabRespositoryResponse.getId();
         return this.gitlabCreateBranchServiceWebClient.createDevelopBranchInGitlab(repositoryId);
+    }
+
+    private Mono<GitlabRepositoryResponse> createTagName(GitlabRepositoryResponse gitlabRespositoryResponse) {
+        final var repositoryId = gitlabRespositoryResponse.getId();
+        return this.gitlabCreateTagServiceWebClient.createTagInGitlab(repositoryId);
     }
 
 

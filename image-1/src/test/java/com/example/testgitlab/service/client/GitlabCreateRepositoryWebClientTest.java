@@ -32,14 +32,13 @@ class GitlabCreateRepositoryWebClientTest {
         request.setDescription("Example of project creation using gitlab api with java.");
         request.setPath("basic_project");
         request.setInitializeWithReadme("true");
-        request.setTopics(List.of("0.0.1"));
         request.setVisibility("public");
         request.setDefaultBranch("master");
 
         final var response = new GitlabRepositoryResponse();
         response.setId("55196040");
 
-        Mockito.when(gitlabService.createRepositoryWithDevelopBranch(Mockito.any()))
+        Mockito.when(gitlabService.createRepositoryWithDevelopBranchAndTagName(Mockito.any()))
                 .thenReturn(Mono.just(response));
 
         this.webTestClient.post()
