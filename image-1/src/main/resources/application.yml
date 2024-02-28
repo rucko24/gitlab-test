@@ -17,4 +17,4 @@ server:
 #    base-path: /api/v1
 # Gitlab base url
 gitlab-base-url:
-  project: "https://gitlab.com/api/v4/projects"
+  project: "http://gitlab.localhost.com:9090/api/v4/projects"
