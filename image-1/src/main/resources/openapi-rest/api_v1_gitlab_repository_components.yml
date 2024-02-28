@@ -19,13 +19,6 @@ components:
         initialize_with_readme:
           type: string
           example: true
-        topics:
-          type: array
-          items:
-            type: string
-          example: ["0.0.1"]
-          minItems: 1
-          maxItems: 10
         visibility:
           type: string
           example: public
