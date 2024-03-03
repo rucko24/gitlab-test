@@ -1,0 +1,15 @@
+{
+  "id" : "da5735a6-b6cc-45aa-8256-fb88b5670613",
+  "request" : {
+    "url" : "/api/v4/projects/1/repository/tags?tag_name=0.0.1&ref=master",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "body-repository-created.json",
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "da5735a6-b6cc-45aa-8256-fb88b5670613"
+}

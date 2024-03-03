@@ -1,9 +1,6 @@
 #spring:
 #  profiles:
 #    active: local
-local:
-  server:
-    port: ${PORT:8080}
 server:
   port: ${PORT:8080}
   springdoc:
@@ -20,4 +17,4 @@ server:
 #    base-path: /api/v1
 # Gitlab base url
 gitlab-base-url:
-  project: "http://gitlab.localhost.com:9090/api/v4/projects"
+  project: "http://localhost:9092/api/v4/projects"

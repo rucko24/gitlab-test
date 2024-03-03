@@ -19,7 +19,7 @@ docker build -t image-1 .
 
 [source,sh]
 ----
-docker run -ti -p 9090:8080 image-1
+docker run --rm -p 8080:8080 --network developers image-1
 ----
 
 - http://localhost:9090/webjars/swagger-ui/index.html#
@@ -31,14 +31,12 @@ image:/image-1/images/swagger-image1.png[width="100%"]
 
 === Execute the post
 
-This is the endopoint or entrypoint to create the repository, we pass it a this *body* either from a tool such as postman or from swagger itself
+This is the endpoint or entrypoint to create the repository, we pass it a this *body* either from a tool such as postman or from swagger itself
 
 [source,sh]
 ----
-localhost:9090/api/v1/gitlab-repository
+localhost:8080/api/v1/gitlab-repository
 ----
-
-image:/image-1/images/using-this-server-from-docker.png[width="100%"]
 
 [source,json]
 ----
@@ -47,9 +45,6 @@ image:/image-1/images/using-this-server-from-docker.png[width="100%"]
   "description": "Example of project creation using gitlab api with java.",
   "path": "basic_project",
   "initialize_with_readme": "true",
-  "topics": [
-    "0.0.1"
-  ],
   "visibility": "public",
   "default_branch": "master"
 }

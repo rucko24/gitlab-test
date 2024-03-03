@@ -12,6 +12,7 @@ import org.springframework.web.util.UriBuilder;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
+import java.util.Objects;
 import java.util.function.Function;
 
 /**
@@ -30,10 +31,8 @@ public class GitlabCreateBranchServiceWebClient {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
-                .onStatus(httpStatusCode -> httpStatusCode.value() == 400,
-                        clientResponse -> Mono.error(new GitlabRepositoryException("Request contains incorrect syntax or cannot be processed")))
-                .onStatus(httpStatusCode -> httpStatusCode.value() == 500,
-                        clientResponse -> Mono.error(new GitlabRepositoryTechnicalException("Internal Server Error")))
+                .onStatus(httpStatusCode -> httpStatusCode.value() == 400, clientResponse -> Mono.error(new GitlabRepositoryException("Request contains incorrect syntax or cannot be processed")))
+                .onStatus(httpStatusCode -> httpStatusCode.value() == 500, clientResponse -> Mono.error(new GitlabRepositoryTechnicalException("Internal Server Error")))
                 .bodyToMono(GitlabRepositoryResponse.class)
                 .map(gitlabRepositoryResponse -> {
                     final var response = new GitlabRepositoryResponse();

@@ -47,12 +47,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-testcontainers</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
@@ -70,37 +64,12 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-contract-wiremock</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-
 		<!-- wiremock -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-<!--		<dependency>-->
-<!--			<groupId>io.swagger.core.v3</groupId>-->
-<!--			<artifactId>swagger-annotations</artifactId>-->
-<!--			<version>2.2.19</version>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>jakarta.validation</groupId>-->
-<!--			<artifactId>jakarta.validation-api</artifactId>-->
-<!--			<version>3.0.2</version>-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>jakarta.servlet</groupId>-->
-<!--			<artifactId>jakarta.servlet-api</artifactId>-->
-<!--			<version>6.0.0</version>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.openapitools</groupId>
@@ -132,7 +101,6 @@
 				<configuration>
 					<testFramework>JUNIT5</testFramework>
 					<testMode>WEBTESTCLIENT</testMode>
-					<testMode>EXPLICIT</testMode>
 					<baseClassForTests>com.example.testgitlab.GitlabBuildBaseTestClass</baseClassForTests>
 				</configuration>
 			</plugin>
@@ -176,7 +144,6 @@
 								<reactive>true</reactive>
 								<useTags>true</useTags>
 								<useResponseEntity>false</useResponseEntity>
-<!--								<identifierNamingConvention>snake_case</identifierNamingConvention>-->
 							</configOptions>
 						</configuration>
 					</execution>

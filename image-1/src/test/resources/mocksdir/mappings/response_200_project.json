@@ -1,0 +1,15 @@
+{
+  "id" : "da5735a6-b6cc-45aa-8256-fb88b5670612",
+  "request" : {
+    "url" : "/api/v4/projects/1/repository/branches?branch=develop&ref=master",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "body-repository-created.json",
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "da5735a6-b6cc-45aa-8256-fb88b5670612"
+}
