@@ -1,0 +1,48 @@
+components:
+  schemas:
+    GitlabRepositoryRequest:
+      type: object
+      required:
+        - name
+        - topics
+        - path
+      properties:
+        name:
+          type: string
+          example: test
+        description:
+          type: string
+          example: Example of project creation using gitlab api with java.
+        path:
+          type: string
+          example: basic_project
+        initialize_with_readme:
+          type: string
+          example: true
+        visibility:
+          type: string
+          example: public
+        default_branch:
+          type: string
+          example: master
+    GitlabRepositoryResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "55196040"
+    TestRecordResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "2"
+        userId:
+          type: string
+          example: "1"
+        title:
+          type: string
+          example: "quis ut nam facilis et officia qui"
+        completed:
+          type: boolean
+          example:  true | false

@@ -1,0 +1,19 @@
+get:
+  operationId: testUsingRecord
+  summary: Endpoint to create a simple get using a record to process call from typicode server
+  tags:
+    - gitlab
+  description: :D
+  responses:
+    '200':
+      description: Record created
+      content:
+        application/json:
+          schema:
+            $ref: './api_v1_gitlab_repository_components.yml#/components/schemas/TestRecordResponse'
+    '400':
+      $ref: './openapi-rest.yml#/components/responses/BadRequest'
+    '404':
+      $ref: './openapi-rest.yml#/components/responses/NotFound'
+    '500':
+      $ref: './openapi-rest.yml#/components/responses/ServerError'

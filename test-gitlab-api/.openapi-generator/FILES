@@ -1,0 +1,8 @@
+src/main/java/com/example/testgitlab/controller/ApiUtil.java
+src/main/java/com/example/testgitlab/controller/GitlabApi.java
+src/main/java/com/example/testgitlab/model/AdditionalData.java
+src/main/java/com/example/testgitlab/model/CreateGitlabRepository400Response.java
+src/main/java/com/example/testgitlab/model/CreateGitlabRepository404Response.java
+src/main/java/com/example/testgitlab/model/CreateGitlabRepository500Response.java
+src/main/java/com/example/testgitlab/model/GitlabRepositoryRequest.java
+src/main/java/com/example/testgitlab/model/GitlabRepositoryResponse.java
