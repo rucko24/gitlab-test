@@ -2,10 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="test-gitlab-api" />
         <module name="image-2" />
         <module name="image-1" />
       </profile>
@@ -15,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="image-1" options="-parameters" />
       <module name="image-2" options="-parameters" />
+      <module name="test-gitlab-api" options="-parameters" />
     </option>
   </component>
 </project>

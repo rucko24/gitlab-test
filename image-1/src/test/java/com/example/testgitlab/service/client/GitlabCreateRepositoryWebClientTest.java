@@ -3,6 +3,7 @@ package com.example.testgitlab.service.client;
 import com.example.testgitlab.controller.CreateGitlabRepositoryController;
 import com.example.testgitlab.model.GitlabRepositoryRequest;
 import com.example.testgitlab.model.GitlabRepositoryResponse;
+import com.example.testgitlab.model.TestRecordResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -19,13 +20,15 @@ class GitlabCreateRepositoryWebClientTest {
     @Autowired
     private WebTestClient webTestClient;
 
-   @MockBean
+    @MockBean
     private GitlabService gitlabService;
 
+    @MockBean
+    private TypiCodeService typiCodeService;
+
     @Test
-//    @Disabled
     @DisplayName("Obtener un 200 cuando se llama al endpoint de gitlab, y se deberia retornar un id")
-    void setup() {
+    void gitlabService() {
 
         final var request = new GitlabRepositoryRequest();
         request.setName("test");
@@ -51,6 +54,33 @@ class GitlabCreateRepositoryWebClientTest {
                 .isOk()
                 .expectBody()
                 .jsonPath("$.id").isEqualTo("55196040");
+
+    }
+
+    @Test
+    @DisplayName("Obtener un 200 cuando se llama al endpoint de gitlab, y se deberia retornar un id")
+    void callToTypiCodeServer() {
+
+        final var response = TestRecordResponse.builder()
+                .id("1")
+                .userId("2")
+                .title("quis ut nam facilis et officia qui")
+                .completed(false)
+                .build();
+
+        Mockito.when(typiCodeService.createCallTypiCode()).thenReturn(Mono.just(response));
+
+        this.webTestClient.get()
+                .uri("/api/v1/test-record")
+                .accept(MediaType.APPLICATION_JSON)
+                .exchange()
+                .expectStatus()
+                .isOk()
+                .expectBody()
+                .jsonPath("$.id").isEqualTo("1")
+                .jsonPath("$.userId").isEqualTo("2")
+                .jsonPath("$.title").isEqualTo("quis ut nam facilis et officia qui")
+                .jsonPath("$.completed").isEqualTo(false);
     }
 
 }

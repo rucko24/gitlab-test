@@ -5,7 +5,7 @@ local:
   server:
     port: ${PORT:8080}
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8082}
   springdoc:
     api-docs:
       path: /documentation/v3/api-docs

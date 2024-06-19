@@ -1,0 +1,31 @@
+
+o	java:S100Y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑÃÄ˜ùÿÿÿÿ8æ–º‘ƒ2
+l
+java:S4488Q"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ñ¦…©üÿÿÿÿ8è–º‘ƒ2
+p	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÆ çøÿÿÿÿ8ê–º‘ƒ2
+k
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ñ¦…©üÿÿÿÿ8ì–º‘ƒ2
+m
+java:S1128"PRemove this unused import 'io.swagger.v3.oas.annotations.ExternalDocumentation'.(ÚÙƒğ8ŸùŒ‘ƒ2
+g
+java:S1128"ERemove this unused import 'io.swagger.v3.oas.annotations.Parameters'.(‘ÖÚêøÿÿÿÿ8ŸùŒ‘ƒ2
+i
+java:S1128"LRemove this unused import 'io.swagger.v3.oas.annotations.media.ArraySchema'.(‚ñãØ8ŸùŒ‘ƒ2
+i
+java:S1128"LRemove this unused import 'io.swagger.v3.oas.annotations.enums.ParameterIn'.(¥âËâ8ŸùŒ‘ƒ2
+@
+java:S1128"Remove this duplicated import.(íŸ¤Šúÿÿÿÿ8ŸùŒ‘ƒ2
+n
+java:S1128"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ8 ùŒ‘ƒ2
+Z
+java:S1128 "8Remove this unused import 'reactor.core.publisher.Flux'.(·äÍÆøÿÿÿÿ8 ùŒ‘ƒ2
+g
+java:S1128""JRemove this unused import 'org.springframework.http.codec.multipart.Part'.(ªûÿï8 ùŒ‘ƒ2
+]
+java:S1128%";Remove this unused import 'jakarta.validation.constraints'.(”ìÉşÿÿÿÿ8 ùŒ‘ƒ2
+M
+java:S1128&"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8 ùŒ‘ƒ2
+L
+java:S1128'"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8 ùŒ‘ƒ2
+Q
+java:S1128("/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8 ùŒ‘ƒ2

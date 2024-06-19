@@ -1,0 +1,14 @@
+
+?
+java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°
+j
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(Ë’Ó—
+d
+java:S1128"IRemove this unused import 'com.fasterxml.jackson.annotation.JsonCreator'.(Ã¸‚×ùÿÿÿÿ
+a
+java:S1128	"KRemove this unused import 'org.openapitools.jackson.nullable.JsonNullable'.(Ø–‡ï
+K
+java:S1128
+"5Remove this unused import 'java.time.OffsetDateTime'.(ûùˆý
+<
+java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ

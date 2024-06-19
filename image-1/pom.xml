@@ -77,6 +77,17 @@
 			<version>0.2.6</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.example.testgitlab</groupId>
+			<artifactId>test-gitlab-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -116,39 +127,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.openapitools</groupId>
-				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>7.2.0</version>
-				<executions>
-
-					<execution>
-						<id>generate-server-stub</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<inputSpec>
-								${project.basedir}/src/main/resources/openapi-rest/openapi-rest.yml
-							</inputSpec>
-							<generatorName>spring</generatorName>
-							<apiPackage>com.example.testgitlab.api</apiPackage>
-							<modelPackage>com.example.testgitlab.model</modelPackage>
-							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
-							<configOptions>
-								<delegatePattern>true</delegatePattern>
-								<useSpringBoot3>true</useSpringBoot3>
-								<interfaceOnly>true</interfaceOnly>
-								<reactive>true</reactive>
-								<useTags>true</useTags>
-								<useResponseEntity>false</useResponseEntity>
-							</configOptions>
-						</configuration>
-					</execution>
-
-				</executions>
 			</plugin>
 
 		</plugins>
