@@ -4,7 +4,7 @@ import com.example.testgitlab.model.TestRecordResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import reactor.core.publisher.Mono;
-import org.springframework.stereotype.Service.
+import org.springframework.stereotype.Service;
 
 @Log4j2
 @Service
